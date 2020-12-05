@@ -1,10 +1,10 @@
-const express = require("express");
+let express = require("express");
 
 const router = express.Router();
 
 const burger = require("../models/burger");
 
-routere.get("*", (req, res) => {
+router.get("*", (req, res) => {
   burger.all((data) => {
     let burgObj = {
       burgers: data,
@@ -13,3 +13,5 @@ routere.get("*", (req, res) => {
     res.render("index", burgObj);
   });
 });
+
+module.exports = router
