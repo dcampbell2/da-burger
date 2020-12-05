@@ -1,0 +1,34 @@
+<img src="public/Images/burger.png">
+
+<h2>Cats that are not sleepy!</h2>
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col-sm-6">
+            <ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burgers-block devoured=false}}
+    {{/unless}}
+  {{/each}}
+</ul>
+        </div>
+        <div class="col-sm-6">
+            <ul>
+  {{#each burger}}
+    {{#if sleepy}}
+      {{> burgers/burgers-block devoured=true}}
+    {{/if}}
+  {{/each}}
+</ul>
+        </div>
+    </div>
+</div>
+
+<h1>Add a Burger!</h1>
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Burger Name</label>
+    <textarea class="form-control" id="burger-name" name="burger_name"></textarea>
+  </div>
+</form>
