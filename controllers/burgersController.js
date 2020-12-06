@@ -2,7 +2,7 @@ let express = require("express");
 
 const router = express.Router();
 
-const burgers = require("../models/burger");
+const burgers = require("../models/burgers");
 
 router.get("/", (req, res) => {
   burgers.all(data => {
