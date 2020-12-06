@@ -1,6 +1,6 @@
-<img src="public/Images/burger.png">
+<img src="/public/Images/burger.png">
 
-<h2>Cats that are not sleepy!</h2>
+<h2>Burger Eater!</h2>
 
 <div class = "container">
     <div class = "row">
@@ -16,7 +16,7 @@
         <div class="col-sm-6">
             <ul>
   {{#each burgers}}
-    {{#if burgers}}
+    {{#if devoured}}
       {{> burgers/burgers-block devoured=true}}
     {{/if}}
   {{/each}}
@@ -26,9 +26,10 @@
 </div>
 
 <h1>Add a Burger!</h1>
-<form>
+<form class = "create-form">
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Burger Name</label>
-    <textarea class="form-control" id="burger-name" name="burger_name"></textarea>
+    <label for="burger-name">Burger Name</label>
+    <textarea type="text" id="burger-name" name="name"></textarea>
   </div>
+  <button type="submit">Add Burger</button>
 </form>
