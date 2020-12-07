@@ -2,10 +2,10 @@ let express = require("express");
 
 const router = express.Router();
 
-const burgers = require("../models/burgers");
+const burger = require("../models/burgers");
 
 router.get("/", (req, res) => {
-  burgers.all(data => {
+  burger.all(data => {
     let burgObj = {
       burgers: data,
     };
@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
 
 router.post("/api/burgers", (req, res) => {
     // Column names
-  burgers.create(["burger_name", "devoured"],
+  burger.create(["burger_name", "devoured"],
       // Properties from object in POST
       [req.body.burger_name, req.body.devoured], result => {
         // Send back the ID of the new burger
@@ -30,7 +30,7 @@ router.post("/api/burgers", (req, res) => {
   
     console.log("condition", condition);
   
-    burgers.update({
+    burger.update({
       devoured: 1
     }, condition, function(result) {
       if (result.changedRows == 0) {
